@@ -1,16 +1,23 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
 }
 
+/* Header with profile */
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+header h1 {
+    font-size: 20px;
 }
 
 header .profile {
@@ -33,7 +40,8 @@ header .profile-menu {
     color: #fff;
     border-radius: 5px;
     overflow: hidden;
-    width: 200px;
+    width: 150px;
+    z-index: 10;
 }
 
 header .profile-menu a {
@@ -49,35 +57,101 @@ header .profile-menu a:hover {
     background: #555;
 }
 
+/* Movies container styles */
 .movies-container {
     display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 cards on desktop */
     gap: 20px;
     padding: 20px;
+    justify-content: center;
 }
 
-/* For mobile: 2 items per row */
-@media (max-width: 768px) {
+/* Individual movie card */
+.movie-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Movie image and badge */
+.movie-image {
+    position: relative;
+}
+
+.movie-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie-image .badge.hd {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie Info */
+.movie-info {
+    padding: 10px;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.movie-meta .badge.year {
+    background-color: #e50914;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+.movie-meta .runtime {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For mobile devices (max-width: 600px): 2 cards per row */
+@media (max-width: 600px) {
     .movies-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* For desktop: 4 items per row */
-@media (min-width: 769px) {
+/* For tablets (max-width: 900px): 3 cards per row */
+@media (max-width: 900px) {
     .movies-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.movie-card {
-    background: #f4f4f4;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-}
-
-.movie-card img {
-    width: 100%;
-    border-bottom: 2px solid #ccc;
+/* For desktops (default): 4 cards per row */
+@media (min-width: 901px) {
+    .movies-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }

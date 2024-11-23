@@ -1,13 +1,14 @@
+// Function to toggle the profile menu
 function toggleMenu() {
-    const menu = document.querySelector('.profile-menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    const profileMenu = document.querySelector('.profile-menu');
+    profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
 }
 
-// Close menu when clicked outside
-document.addEventListener('click', function (event) {
+// Close the menu if clicking outside
+window.addEventListener('click', (e) => {
     const profile = document.querySelector('.profile');
-    const menu = document.querySelector('.profile-menu');
-    if (!profile.contains(event.target)) {
-        menu.style.display = 'none';
+    const profileMenu = document.querySelector('.profile-menu');
+    if (!profile.contains(e.target)) {
+        profileMenu.style.display = 'none';
     }
 });
