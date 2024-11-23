@@ -54,7 +54,7 @@ header .profile-menu a {
 }
 
 header .profile-menu a:hover {
-    background: #ff0000;
+    background: #ff00;
 }
 
 /* Movies container styles */
@@ -129,7 +129,7 @@ header .profile-menu a:hover {
 
 h3 {
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
     color: #333;
 }
 
