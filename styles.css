@@ -66,10 +66,8 @@ header .profile-menu a:hover {
     justify-content: center;
 }
 
-/* Individual movie card with fixed size */
+/* Individual movie card with responsive size */
 .movie-card {
-    width: 250px;   /* Fixed width */
-    height: 300px;  /* Fixed height */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -79,14 +77,13 @@ header .profile-menu a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: auto; /* Ensure center alignment */
 }
 
 /* Movie image */
 .movie-image {
     position: relative;
-    height: 60%;
     width: 100%;
+    height: 60%; /* Aspect ratio maintained for mobile, tablet and desktop */
 }
 
 .movie-image img {
@@ -156,10 +153,6 @@ footer p {
     .movies-container {
         grid-template-columns: repeat(2, 1fr); /* 2 cards on mobile */
     }
-    .movie-card {
-        width: 250px;
-        height: 300px;
-    }
 }
 
 /* For tablets (max-width: 900px): 3 cards per row */
@@ -167,19 +160,11 @@ footer p {
     .movies-container {
         grid-template-columns: repeat(3, 1fr); /* 3 cards on tablet */
     }
-    .movie-card {
-        width: 250px;
-        height: 300px;
-    }
 }
 
 /* For desktops (default): 4 cards per row */
 @media (min-width: 901px) {
     .movies-container {
         grid-template-columns: repeat(4, 1fr); /* 4 cards on desktop */
-    }
-    .movie-card {
-        width: 250px;
-        height: 300px;
     }
 }
