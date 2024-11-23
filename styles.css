@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .profile {
+    position: relative;
+    cursor: pointer;
+}
+
+header .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .profile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #444;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 200px;
+}
+
+header .profile-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    gap: 10px;
+}
+
+header .profile-menu a:hover {
+    background: #555;
+}
+
+.movies-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* For mobile: 2 items per row */
+@media (max-width: 768px) {
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For desktop: 4 items per row */
+@media (min-width: 769px) {
+    .movies-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.movie-card {
+    background: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+}
