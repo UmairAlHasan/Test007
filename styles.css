@@ -1,3 +1,10 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,6 +12,7 @@ body {
     box-sizing: border-box;
 }
 
+/* Header Styles */
 header {
     background-color: #333;
     color: #fff;
@@ -48,11 +56,26 @@ header .profile-menu a:hover {
     background: #555;
 }
 
+/* Movie Container Styles */
 .movies-container {
     display: grid;
     gap: 20px;
     padding: 20px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Movie Card Styles */
+.movie-card {
+    background: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
 }
 
 /* Footer Styles */
@@ -92,15 +115,127 @@ footer p {
     }
 }
 
-.movie-card {
-    background: #f4f4f4;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
+/* Form Styles for Login/Registration */
+.container {
+    display: none; /* Initially hidden, will be shown when login/register is triggered */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
 }
 
-.movie-card img {
+.form-container {
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 8px;
     width: 100%;
-    border-bottom: 2px solid #ccc;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Input Styling */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Form Footer */
+.form-footer {
+    margin-top: 20px;
+}
+
+.form-footer p {
+    font-size: 14px;
+    color: #555;
+}
+
+.form-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Menu Styles */
+.profile-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.profile-menu.show {
+    display: block;
+}
+
+.profile-menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+}
+
+.profile-menu a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .profile-menu {
+        right: 10px;
+    }
 }
