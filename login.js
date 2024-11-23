@@ -46,3 +46,15 @@ function logout() {
     isLoggedIn = false;
     toggleMenu();  // Update the profile menu after logout
 }
+
+// Function to open the modal
+function openModal() {
+    // Show the modal by adding the 'show' class
+    document.getElementById("login-modal").classList.add("show");
+}
+
+// Function to close the modal
+function closeModal() {
+    // Hide the modal by removing the 'show' class
+    document.getElementById("login-modal").classList.remove("show");
+}

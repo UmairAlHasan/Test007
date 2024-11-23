@@ -14,7 +14,8 @@
         <div class="profile" onclick="toggleMenu()">
             <img src="https://via.placeholder.com/40" alt="Profile">
             <div class="profile-menu">
-                <a href="#"><i class="fas fa-sign-in-alt"></i> Log in</a>
+                <!-- This Login button will show the modal -->
+                <a href="javascript:void(0)" onclick="openModal()"><i class="fas fa-sign-in-alt"></i> Log in</a>
                 <a href="#"><i class="fas fa-user"></i> Profile</a>
                 <a href="#"><i class="fas fa-cog"></i> Settings</a>
             </div>
@@ -43,6 +44,7 @@
     <!-- Fullscreen Modal -->
     <div class="modal" id="login-modal">
         <div class="modal-content">
+            <!-- Close Button -->
             <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
             <form id="login-form" class="form-container">
                 <h2>Login</h2>
