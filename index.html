@@ -3,53 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Thumbnails</title>
+    <title>Movies Website</title>
+    <!-- Link to Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <h1>Movie Thumbnails</h1>
-        <div class="profile">
-            <img src="https://via.placeholder.com/40" alt="Profile Image" />
+        <h1>Movies Website</h1>
+        <div class="profile" onclick="toggleMenu()">
+            <img src="profile-placeholder.png" alt="Profile">
             <div class="profile-menu">
+                <a href="#"><i class="fas fa-sign-in-alt"></i> Log in</a>
                 <a href="#"><i class="fas fa-user"></i> Profile</a>
-                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
             </div>
         </div>
     </header>
-
-    <!-- Movies Container -->
     <div class="movies-container">
-        <!-- Movie Card 1 -->
         <div class="movie-card">
-            <div class="movie-thumbnail">
-                <img src="https://via.placeholder.com/250x140" alt="Movie Thumbnail">
-            </div>
-            <div class="movie-details">
-                <h3>Movie Title</h3>
-            </div>
+            <img src="movie1.jpg" alt="Movie 1">
+            <p>Movie 1</p>
         </div>
-
-        <!-- Movie Card 2 -->
         <div class="movie-card">
-            <div class="movie-thumbnail">
-                <img src="https://via.placeholder.com/250x140" alt="Movie Thumbnail">
-            </div>
-            <div class="movie-details">
-                <h3>Another Movie</h3>
-            </div>
+            <img src="movie2.jpg" alt="Movie 2">
+            <p>Movie 2</p>
         </div>
-
-        <!-- More movie cards can be added here -->
+        <div class="movie-card">
+            <img src="movie3.jpg" alt="Movie 3">
+            <p>Movie 3</p>
+        </div>
+        <div class="movie-card">
+            <img src="movie4.jpg" alt="Movie 4">
+            <p>Movie 4</p>
+        </div>
     </div>
-
-    <!-- Footer Section -->
+    
     <footer>
-        <p>&copy; 2024 Movie Thumbnails. All Rights Reserved.</p>
-    </footer>
+    <p>&copy; 2024 Movie Website. All rights reserved.</p>
+</footer>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
