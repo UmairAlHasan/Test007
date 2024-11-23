@@ -62,12 +62,14 @@ header .profile-menu a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Default to 4 cards on desktop */
     gap: 20px;
-    padding: 12px;
+    padding: 20px;
     justify-content: center;
 }
 
 /* Individual movie card */
 .movie-card {
+    width: 250px;
+    height: 375px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -129,7 +131,7 @@ header .profile-menu a:hover {
 
 h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 12px;
     color: #333;
 }
 
