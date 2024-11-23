@@ -123,7 +123,13 @@ footer p {
 /* For mobile devices (max-width: 600px): 1 card per row */
 @media (max-width: 600px) {
     .movies-container {
-        grid-template-columns: 1fr; /* 1 card per row */
+        grid-template-columns: 1fr !important; /* Force 1 card per row */
+        padding-left: 10px; /* Ensure container width is correct */
+        padding-right: 10px; /* Ensure container width is correct */
+    }
+
+    .movie-card {
+        width: 100%; /* Ensure card occupies full width */
     }
 }
 
