@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Cards with Profile</title>
-    <!-- Link to CSS -->
+    <title>Movie Thumbnails</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Header with Profile -->
+    <!-- Header Section -->
     <header>
-        <h1>Movies Website</h1>
-        <div class="profile" onclick="toggleMenu()">
-            <img src="https://via.placeholder.com/40" alt="Profile">
+        <h1>Movie Thumbnails</h1>
+        <div class="profile">
+            <img src="https://via.placeholder.com/40" alt="Profile Image" />
             <div class="profile-menu">
-                <a href="#"><i class="fas fa-sign-in-alt"></i> Log in</a>
                 <a href="#"><i class="fas fa-user"></i> Profile</a>
-                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
     </header>
@@ -27,39 +24,44 @@
     <div class="movies-container">
         <!-- Movie Card 1 -->
         <div class="movie-card">
-            <div class="movie-image">
-                <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/crsEqrc97MWDr1oV7VkXcEOX5J7.jpg" alt="Your Name">
-                <span class="badge hd">HD</span>
+            <div class="movie-thumbnail">
+                <img src="https://via.placeholder.com/250x140" alt="Movie Thumbnail">
+                <div class="movie-duration">2:30</div>
             </div>
-            <div class="movie-info">
+            <div class="movie-details">
+                <h3>Movie Title</h3>
+                <p>Some movie description here...</p>
                 <div class="movie-meta">
-                    <span class="badge year">2016</span>
-                    <span class="runtime"><i class="fas fa-clock"></i> 01h46m</span>
+                    <span class="views">1.2M views</span>
+                    <span class="year">2024</span>
                 </div>
-                <h3>Your Name.</h3>
             </div>
         </div>
 
         <!-- Movie Card 2 -->
         <div class="movie-card">
-            <div class="movie-image">
-                <img src="https://media.themoviedb.org/t/p/w440_and_h660_face/crsEqrc97MWDr1oV7VkXcEOX5J7.jpg" alt="Another Movie">
-                <span class="badge hd">HD</span>
+            <div class="movie-thumbnail">
+                <img src="https://via.placeholder.com/250x140" alt="Movie Thumbnail">
+                <div class="movie-duration">1:50</div>
             </div>
-            <div class="movie-info">
-                <div class="movie-meta">
-                    <span class="badge year">2020</span>
-                    <span class="runtime"><i class="fas fa-clock"></i> 02h13m</span>
-                </div>
+            <div class="movie-details">
                 <h3>Another Movie</h3>
+                <p>Description goes here...</p>
+                <div class="movie-meta">
+                    <span class="views">5M views</span>
+                    <span class="year">2023</span>
+                </div>
             </div>
         </div>
+
+        <!-- More movie cards can be added here -->
     </div>
 
-<footer>
-    <p>&copy; 2024 Movie Website. All rights reserved.</p>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Movie Thumbnails. All Rights Reserved.</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
