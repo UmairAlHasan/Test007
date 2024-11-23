@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Website</title>
+    <title>Movies Website</title>
     <!-- Link to Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header with Profile Menu -->
     <header>
         <h1>Movies Website</h1>
         <div class="profile" onclick="toggleMenu()">
             <img src="https://via.placeholder.com/40" alt="Profile">
-            <div class="profile-menu">
-                <!-- This Login button will show the modal -->
-                <a href="javascript:void(0)" onclick="openModal()"><i class="fas fa-sign-in-alt"></i> Log in</a>
-                <a href="#"><i class="fas fa-user"></i> Profile</a>
-                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <div id="profile-menu" class="profile-menu">
+                <!-- Options will be dynamically updated here -->
             </div>
         </div>
     </header>
 
+    <!-- Movies Container -->
     <div class="movies-container">
         <div class="movie-card">
             <img src="movie1.jpg" alt="Movie 1">
@@ -41,12 +40,11 @@
         </div>
     </div>
     
-    <!-- Fullscreen Modal -->
+    <!-- Fullscreen Modal for Login -->
     <div class="modal" id="login-modal">
         <div class="modal-content">
-            <!-- Close Button -->
             <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
-            <form id="login-form" class="form-container">
+            <form id="login-form">
                 <h2>Login</h2>
                 <div class="input-group">
                     <label for="email">Email:</label>
@@ -64,11 +62,11 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Movie Website. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
-    <script src="login.js"></script>
 </body>
 </html>
