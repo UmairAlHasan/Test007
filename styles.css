@@ -62,7 +62,7 @@ header .profile-menu a:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Default to 4 cards on desktop */
     gap: 20px;
-    padding: 20px;
+    padding: 12px;
     justify-content: center;
 }
 
