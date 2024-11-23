@@ -91,18 +91,6 @@ header .profile-menu a:hover {
     display: block;
 }
 
-/* Duration on the thumbnail */
-.movie-duration {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
 /* Movie Details */
 .movie-details {
     padding: 10px;
@@ -112,30 +100,6 @@ header .profile-menu a:hover {
     margin: 10px 0;
     font-size: 18px;
     color: #333;
-}
-
-.movie-details p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.movie-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: #666;
-}
-
-.movie-meta .views {
-    font-weight: bold;
-}
-
-.movie-meta .year {
-    background-color: #e50914;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
 }
 
 /* Footer Styles */
