@@ -136,7 +136,7 @@ h3 {
 /* Media Queries for Responsiveness */
 
 /* For mobile devices (max-width: 600px): 2 cards per row */
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .movies-container {
         grid-template-columns: repeat(2, 1fr);
     }
