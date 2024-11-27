@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+nav ul {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+}
+nav ul li {
+    margin: 10px 0;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav .toggle-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+main {
+    padding: 20px;
+}
+section#search {
+    margin-bottom: 20px;
+}
+section#posts {
+    margin-bottom: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Light & Dark Theme */
+body.light {
+    background-color: #f0f0f0;
+    color: black;
+}
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+    nav .toggle-menu {
+        display: none;
+    }
+}
