@@ -1,165 +1,76 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
-
-/* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Profile menu styles */
-.profile {
-    position: relative;
-    cursor: pointer;
-}
-
-.profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.profile-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: #444;
-    color: #fff;
-    border-radius: 8px;
-    width: 150px;
-}
-
-.profile-menu.show {
-    display: block;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.profile-menu a:hover {
-    background-color: #555;
-}
-
-/* Movies Container styles */
-.movies-container {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-
-/* Movie card styles */
-.movie-card {
-    background: #f4f4f4;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-}
-
-.movie-card img {
-    width: 100%;
-    border-bottom: 2px solid #ccc;
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-}
-
-/* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Button styles */
-.btn {
     background-color: #333;
     color: white;
     padding: 10px;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+nav ul {
+    list-style-type: none;
+    display: none;
+    flex-direction: column;
+}
+nav ul li {
+    margin: 10px 0;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav .toggle-menu {
+    background: none;
     border: none;
-    width: 100%;
+    color: white;
+    font-size: 20px;
     cursor: pointer;
 }
-
-.btn:hover {
-    background-color: #555;
+main {
+    padding: 20px;
 }
-
-.form-footer {
+section#search {
+    margin-bottom: 20px;
+}
+section#posts {
+    margin-bottom: 20px;
+}
+footer {
     text-align: center;
-    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
 }
 
-/* For mobile: 1 item per row */
-@media (max-width: 480px) {
-    .movies-container {
-        grid-template-columns: 1fr;
+/* Light & Dark Theme */
+body.light {
+    background-color: #f0f0f0;
+    color: black;
+}
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
     }
-}
-
-/* For small tablets and larger mobile screens: 2 items per row */
-@media (max-width: 768px) {
-    .movies-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* For medium tablets and desktops: 4 items per row */
-@media (min-width: 769px) {
-    .movies-container {
-        grid-template-columns: repeat(4, 1fr);
+    nav .toggle-menu {
+        display: none;
     }
 }

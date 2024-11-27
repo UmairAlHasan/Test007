@@ -1,47 +1,62 @@
-let isLoggedIn = false; // Track login status (default is false)
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+    const backToTop = document.getElementById("backToTop");
+    const postForm = document.getElementById("postForm");
+    const postsSection = document.getElementById("posts");
+    const searchInput = document.getElementById("searchInput");
 
-// Toggle the Profile menu to show the correct options based on login state
-function toggleMenu() {
-    const profileMenu = document.getElementById('profile-menu');
-    
-    if (isLoggedIn) {
-        profileMenu.innerHTML = `
-            <a href="#"><i class="fas fa-user"></i> Profile</a>
-            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            <a href="#"><i class="fas fa-cog"></i> Settings</a>
-        `;
-    } else {
-        profileMenu.innerHTML = `
-            <a href="javascript:void(0);" onclick="openModal()"><i class="fas fa-sign-in-alt"></i> Log in</a>
-            <a href="#"><i class="fas fa-cog"></i> Settings</a>
-        `;
-    }
+    // Theme Toggle
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        document.body.classList.toggle("light");
+        themeToggle.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
+    });
 
-    // Toggle the visibility of the profile menu
-    profileMenu.classList.toggle('show');
-}
+    // Toggle Menu
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
 
-// Display login form
-function openModal() {
-    document.getElementById('login-modal').classList.add('show');
-}
+    // Back to Top
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-// Close modal
-function closeModal() {
-    document.getElementById('login-modal').classList.remove('show');
-}
+    // Fetch Posts
+    const fetchPosts = async () => {
+        const response = await fetch("/api/posts");
+        const posts = await response.json();
+        postsSection.innerHTML = posts.map(post => `
+            <article>
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+            </article>
+        `).join("");
+    };
 
-// Simulate logging out
-function logout() {
-    isLoggedIn = false;
-    toggleMenu();  // Update the profile menu after logout
-}
+    // Publish Post
+    postForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const title = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+        await fetch("/api/posts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ title, content }),
+        });
+        postForm.reset();
+        fetchPosts();
+    });
 
-// Close menu when clicked outside
-document.addEventListener('click', function (event) {
-    const profile = document.querySelector('.profile');
-    const menu = document.querySelector('.profile-menu');
-    if (!profile.contains(event.target)) {
-        menu.style.display = 'none';
-    }
+    // Search Posts
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll("article").forEach(article => {
+            article.style.display = article.textContent.toLowerCase().includes(query) ? "" : "none";
+        });
+    });
+
+    fetchPosts();
 });
